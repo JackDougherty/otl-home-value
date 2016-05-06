@@ -11,7 +11,7 @@ var map = L.map('map', {
 
 // Edit links to your GitHub repo and data source credit
 map.attributionControl
-.setPrefix('View <a href="http://github.com/jackdougherty/leaflet-map-polygon-tabs">data and code on GitHub</a>, created with <a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>; design by <a href="http://ctmirror.org">CT Mirror</a>');
+.setPrefix('View <a href="http://github.com/jackdougherty/otl-home-value">data and code on GitHub</a>, created with <a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>; design by <a href="http://ctmirror.org">CT Mirror</a>');
 
 // Basemap layer
 new L.tileLayer('http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png', {
@@ -88,7 +88,7 @@ info.onAdd = function (map) {
 info.update = function (props) {
   var winName =
   this._div.innerHTML = (props ?
-    '<div class="areaName">' + props.town + '</div>' : '<div class="areaName faded"><small>Hover over areas<br>Click tabs or arrow keys</small></div>') + '<div class="areaLabel"><div class="areaValue">Home Value Index</div>' +(props ? '' + (checkNull(props["index" + year])) : '--') + '</div>';
+    '<div class="areaName">' + props.town + '</div>' : '<div class="areaName faded">Hover over areas</div>') + '<div class="areaLabel"><div class="areaValue">Home Value Index</div>' +(props ? '' + (checkNull(props["index" + year])) : '--') + '</div>';
 };
 info.addTo(map);
 
