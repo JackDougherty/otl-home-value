@@ -11,7 +11,7 @@ var map = L.map('map', {
 
 // Edit links to your GitHub repo and data source credit
 map.attributionControl
-.setPrefix('View <a href="http://github.com/jackdougherty/otl-home-value">data and code on GitHub</a>, created with <a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>; design by <a href="http://ctmirror.org">CT Mirror</a>');
+.setPrefix('View <a href="http://github.com/jackdougherty/otl-home-value" target="_blank">data and code on GitHub</a>, created with <a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>; design by <a href="http://ctmirror.org">CT Mirror</a>');
 
 // Basemap layer
 new L.tileLayer('http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png', {
@@ -26,6 +26,14 @@ $.getJSON("town-home-value-index.geojson", function (data) {
   }).addTo(map);
 });
 
+// places a star on state capital of Hartford, CT
+var starIcon = L.icon({
+  iconUrl: 'star-18.png',
+  iconRetinaUrl: 'star-18@2x.png',
+  iconSize: [18, 18]
+});
+L.marker([41.764, -72.682], {icon: starIcon}).addTo(map);
+
 // Edit range cutoffs and colors to match your data; see http://colorbrewer.org
 // Any values not listed in the ranges below displays as the last color
 function getColor(d) {
@@ -34,7 +42,7 @@ function getColor(d) {
          d > 1.0 ? '#74c476' :
          d > 0.5 ? '#bae4b3' :
          d > 0.1 ? '#edf8e9' :
-                   'white' ;
+                   'gray' ;
 }
 
 // Edit the getColor property to match data properties in your GeoJSON file
