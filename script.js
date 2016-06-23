@@ -18,6 +18,8 @@ new L.tileLayer('http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png
   attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
 }).addTo(map);
 
+L.control.scale().addTo(map);
+
 // Edit to upload GeoJSON data file from your local directory
 $.getJSON("town-home-value-index.geojson", function (data) {
   geoJsonLayer = L.geoJson(data, {
