@@ -1,7 +1,7 @@
-# otl-home-value-index
+# otl-home-value
 historical home value index for Hartford County CT using leaflet-map-polygon-tabs
 
-## Demo
+## Link
 http://jackdougherty.github.io/otl-home-value/index-frame.html
 
 ## Embed shortcode in http://OnTheLine.trincoll.edu
