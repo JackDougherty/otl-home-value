@@ -2,10 +2,12 @@
 historical home value index for Hartford County CT using leaflet-map-polygon-tabs
 
 ## Link
-http://jackdougherty.github.io/otl-home-value/index-frame.html
+https://jackdougherty.github.io/otl-home-value/index-frame.html
 
 ## Embed shortcode in http://OnTheLine.trincoll.edu
-- [iframe src="http://jackdougherty.github.io/otl-home-value/index.html" width=100% height = 550]
+- [iframe src="https://jackdougherty.github.io/otl-home-value/index.html" width=100% height = 550]
+
+replaces 2012 UConn MAGIC Google Map http://magic.lib.uconn.edu/otl/timeslider_homevalue.html
 
 ## Historical data
 - See metadata in town-home-value-index-metadata.xls, and simplified version in town-home-value-index.csv (and .geojson), both in this folder.
