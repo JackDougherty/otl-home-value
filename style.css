@@ -2,14 +2,14 @@
     width: 100%;
     font-family: Arial, sans-serif;
 }
-/* Edit top to fit tabBar height: 35px */
-/* Edit height to display full map: 500px */
+/* Edit top to fit title + tabBar height: 45px */
+/* Edit height to display full map: 510px */
 #map {
     position: absolute;
     left: 0;
     top: 45px;
     width: 100%;
-    height: 500px;
+    height: 510px;
 }
 .tabBar {
     font: 14px/16px Arial, Helvetica, sans-serif;
