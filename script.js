@@ -6,16 +6,27 @@ var tabs = 11;
 var map = L.map('map', {
   center: [41.79, -72.6],
   zoom: 10,
-  scrollWheelZoom: false
+  scrollWheelZoom: false,
+  keyboard: false,
 });
 
 // Edit links to your GitHub repo and data source credit
 map.attributionControl
 .setPrefix('View <a href="https://github.com/ontheline/otl-home-value" target="_blank">data and code on GitHub</a>, created with <a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>; design by <a href="http://ctmirror.org">CT Mirror</a>');
 
-// Basemap layer
-new L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png', {
-  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
+// Basemap CartoDB layer with no labels
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
+  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright"> \
+  OpenStreetMap</a> contributors, &copy; \
+  <a href="http://cartodb.com/attributions">CartoDB</a>'
+}).addTo(map);
+
+// CartoDB Labels only, put in marker pane so they're above choropleth
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.png', {
+  pane: 'markerPane',
+  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright"> \
+  OpenStreetMap</a> contributors, &copy; \
+  <a href="http://cartodb.com/attributions">CartoDB</a>'
 }).addTo(map);
 
 L.control.scale().addTo(map);
@@ -27,14 +38,6 @@ $.getJSON("town-home-value-index.geojson", function (data) {
     onEachFeature: onEachFeature
   }).addTo(map);
 });
-
-// places a star on state capital of Hartford, CT
-var starIcon = L.icon({
-  iconUrl: 'star-18.png',
-  iconRetinaUrl: 'star-18@2x.png',
-  iconSize: [18, 18]
-});
-L.marker([41.764, -72.682], {icon: starIcon}).addTo(map);
 
 // Edit range cutoffs and colors to match your data; see http://colorbrewer.org
 // Any values not listed in the ranges below displays as the last color
