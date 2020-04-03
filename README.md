@@ -1,11 +1,11 @@
 # otl-home-value
 historical home value index for Hartford County CT using leaflet-map-polygon-tabs
 
-## Link
+## Demo
 https://ontheline.github.io/otl-home-value/index-caption.html
 
-## View in the book http://OnTheLine.trincoll.edu
-- set iframe height 565 px
+## View in the book
+http://OnTheLine.trincoll.edu
 
 This Leaflet map replaces 2012 UConn MAGIC Google Map http://magic.lib.uconn.edu/otl/timeslider_homevalue.html
 
@@ -16,9 +16,6 @@ This Leaflet map replaces 2012 UConn MAGIC Google Map http://magic.lib.uconn.edu
 ## Credits
 - Map design by [@alvinschang](https://github.com/alvinschang) Connecticut Mirror http://ctmirror.org
 - Code improvements by [@ilyankou](https://github.com/ilyankou)
-
-## Based on template
-- https://github.com/jackdougherty/leaflet-map-polygon-tabs
 
 ## Create your own
 - see Leaflet templates section of *Data Visualization for All* book http://datavizforall.org
